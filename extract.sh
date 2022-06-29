@@ -54,6 +54,8 @@ cp -r v/* vendor/
 cp -r s/* system/
 sudo umount -f v
 sudo umount -f s
+tune2fs -l system.img | grep "Block count\|Block size" > info.txt
+tune2fs -l vendor.img | grep "Block count\|Block size" >> info.txt
 printf "${CYAN} Removing useless files ....\n"
 rm -rf system.img
 rm -rf vendor.img
@@ -63,6 +65,8 @@ clear
 
 printf "${DGREEN} Images Mounted Succesfully ....\n"
 
-printf "${DCYAN} =============================================================\n"
+printf "${DCYAN} ======================================================================\n"
 figlet -cf small THANK YOU!!
-printf "${DCYAN} =============================================================\n"
+printf "${DCYAN} ======================================================================\n"
+
+printf "${DBLUE}Check info.txt for Block info"
