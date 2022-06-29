@@ -1,4 +1,4 @@
-### Script To Unpack Compiled Stock/Custom Rom
+### Script To Unpack Compiled Stock/Custom Rom and Repack to *.new.dat.br
 
 ### Clone this repo and run setup.sh
 
