@@ -26,9 +26,9 @@ printf "${DGREEN} Your machine is installed with Arch Linux\n"
 fi
 printf "${ORANGE}"
 if [ $DISTRO == debian ];then
-	sudo apt-get update && sudo apt-get install git brotli python cmake zip unzip rar unrar -y
+	sudo apt-get update && sudo apt-get install git brotli python cmake zip unzip figlet rar unrar -y
 else
-	sudo pacman -Syy && sudo pacman -S android-tools cmake git python brotli zip unzip rar unrar --noconfirm
+	sudo pacman -Syy && sudo pacman -S android-tools cmake git python brotli zip unzip rar figlet unrar --noconfirm
 fi
 clear
 printf "${BLUE}Downloading sdat2img ....\n"

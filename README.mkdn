@@ -1,0 +1,22 @@
+### Script To Unpack Compiled Stock/Custom Rom
+
+### Clone this repo and run setup.sh
+
+### To clone
+~~~
+git clone https://github.com/Navin136/Rom-Unpacker
+~~~
+
+### Give Permissions
+~~~
+cd Rom-Unpacker && chmod +x *
+~~~
+
+### Run Setup file
+~~~
+bash setup.sh
+~~~
+
+#### folder named "root" in the root directory of the cloned repo contains boot.img, firmware(depends), system folder, vendor folder
+
+### Thank You!!! Have a Nice Day
