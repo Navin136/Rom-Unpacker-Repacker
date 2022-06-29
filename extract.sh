@@ -22,9 +22,6 @@ rm -rf META-INF
 rm -rf *.zip
 rm system.new.dat.br
 rm vendor.new.dat.br
-
-printf "${ORANGE} Setting up Permissions for sdat2img ....\n"
-chmod +x ../sdat2img.py
 sleep 1
 clear 
 

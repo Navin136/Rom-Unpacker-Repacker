@@ -31,8 +31,4 @@ else
 	sudo pacman -Syy && sudo pacman -S android-tools cmake git python brotli zip unzip rar figlet unrar --noconfirm
 fi
 clear
-printf "${BLUE}Downloading sdat2img ....\n"
-wget https://github.com/Navin136/sdat2img/raw/master/sdat2img.py > /dev/null 2>&1
-printf "${GREEN} Done..\n" && sleep 1
-clear
 bash extract.sh
