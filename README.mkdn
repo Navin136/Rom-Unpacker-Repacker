@@ -4,19 +4,26 @@
 
 ### To clone
 ~~~
-git clone https://github.com/Navin136/Rom-Unpacker
+git clone https://github.com/Navin136/Rom-Unpacker-Repacker
 ~~~
 
 ### Give Permissions
 ~~~
-cd Rom-Unpacker && chmod +x *
+cd Rom-Unpacker-Repacker && chmod +x *
 ~~~
 
-### Run Setup file
+### For Unpacking
 ~~~
-bash setup.sh
+bash unpack_rom.sh
 ~~~
 
-#### folder named "root" in the root directory of the cloned repo contains boot.img, firmware(depends), system folder, vendor folder
+#### folder named "root" in the root directory of the cloned repo contains boot.img, firmware(depends), system folder, vendor folder and take backup of info.txt which is present in the same directory of system and vendor folder
+#### you can get block count and block size in info.txt. first two is for system and second two is for vendor
+
+### For Repacking 
+~~~
+bash repack_rom.sh
+~~~
+
 
 ### Thank You!!! Have a Nice Day
