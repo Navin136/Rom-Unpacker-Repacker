@@ -39,20 +39,30 @@ read BSV
 LEN_SYS=$((BCS * BSS))
 LEN_VEN=$((BCV * BSV))
 
-printf "${GREEN} Enter System Directory: \n"
-read SYSDIR
-printf "${GREEN} Enter Vendor Directory: \n"
-read VENDIR
+printf "${GREEN} Enter Directory Which has system and vendor folder: \n"
+read SYSVENDIR
 
 clear
-printf "${ORANGE} Making Images.......\n"
-./tools/make_ext4fs -a system -s -l ${LEN_SYS} system.img ${SYSDIR}
-./tools/make_ext4fs -a vendor -s -l ${LEN_VEN} vendor.img ${VENDIR}
+printf "${ORANGE} Making Images.......\n\n"
+./tools/make_ext4fs -a system -s -l ${LEN_SYS} system.img ${SYSVENDIR}/system/
+./tools/make_ext4fs -a vendor -s -l ${LEN_VEN} vendor.img ${SYSVENDIR}/vendor/
 
+printf "${BLUE} Converting image to sdat .....\n"
 ./tools/img2sdat.py -v 4 system.img -p system
 ./tools/img2sdat.py -v 4 vendor.img -p vendor
 
-brotli system.new.dat
-brotli vendor.new.dat
+#brotli system.new.dat
+#brotli vendor.new.dat
 
-rm system.img system.new.dat vendor.img vendor.new.dat
+printf "${CYAN} Removing System and Vendor Images\n"
+rm system.img vendor.img
+mkdir port
+cp -r root/META-INF root/boot.img root/firmware* *.new.dat *.patch.dat *.transfer.list port/
+cd port
+printf "${GREEN} Do You Want to Zip the Rom? (Y/N)\n"
+read OPTION
+if [ $OPTION == Y ] || [ $OPTION == y ];then
+	zip -r ported.zip boot.img vendor.* system.* META-INF firmware-update
+else
+	printf "${ORANGE} Okay! Thank You! Have a Nice Day!"
+fi
