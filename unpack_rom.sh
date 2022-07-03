@@ -51,8 +51,7 @@ printf "${DGREEN} Decompiling Vendor Image With Brotli ....\n"
 printf "${BLUE} This Might take 1 or 2 Minute(s)\n"
 
 brotli -d vendor.new.dat.br
-rm -rf META-INF
-rm -rf *.zip
+#rm -rf META-INF
 rm system.new.dat.br
 rm vendor.new.dat.br
 sleep 1
@@ -96,7 +95,7 @@ rm -rf s
 rm -rf v
 clear
 
-printf "${DGREEN} Images Mounted Succesfully ....\n"
+printf "${DGREEN} Rom Extracted Succesfully ....\n"
 
 printf "${DCYAN} ======================================================================\n"
 figlet -cf small THANK YOU!!
