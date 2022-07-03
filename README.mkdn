@@ -25,5 +25,9 @@ bash unpack_rom.sh
 bash repack_rom.sh
 ~~~
 
+### For Cleaning Directory
+~~~
+bash cleanup.sh
+~~~
 
 ### Thank You!!! Have a Nice Day
